@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CIPA 5 — Hojas de Vida</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<div id="scrollBar"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-brand">CIPA&nbsp;5</a>
+  <button class="nav-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a>
+    <a href="cv1.html">Ivan Vergara</a>
+    <a href="cv2.html">Luis Meza</a>
+    <a href="cv3.html">Yoel Meléndrez</a>
+    <a href="cv4.html">Jaime Sánchez</a>
+    <a href="cv5.html">Ramón Puello</a>
+  </div>
+  <div class="nav-spacer"></div>
+  <button class="audio-btn" onclick="toggleAudio()" title="Música de fondo">
+    <span id="audioIcon">🔇</span>
+  </button>
+</nav>
+
+<audio id="bgAudio" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"/>
+</audio>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag"><i class="fas fa-users"></i>&nbsp;&nbsp;Ingeniería de Software · 2026</div>
+    <h1>HOJAS DE<br><span>VIDA</span></h1>
+    <p>Portafolio digital de los cinco integrantes del CIPA 5. Conoce nuestra formación, experiencia y habilidades.</p>
+    <a href="#equipo" class="hero-cta">
+      <i class="fas fa-arrow-down"></i> Ver equipo
+    </a>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<div class="section" id="equipo">
+  <p class="section-sub" style="letter-spacing:3px;font-size:.72rem;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">NUESTRO EQUIPO</p>
+  <h2 class="section-title">Los <span>5</span> Integrantes</h2>
+  <p class="section-sub">Haz clic en cualquier tarjeta para ver la hoja de vida completa</p>
+
+  <div class="cards-grid">
+
+    <a href="cv1.html" class="member-card" style="--hov: #c8ff00;">
+      <div class="card-num">01</div>
+      <div class="avatar-placeholder" style="background:rgba(200,255,0,0.08);border:2px solid rgba(200,255,0,0.3);">
+        <img src="foto1.jpeg" alt="Ivan Vergara" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';this.parentElement.querySelector('.initials').style.display='flex'"/>
+        <span class="initials" style="display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:rgba(200,255,0,0.7);width:100%;height:100%;">IV</span>
+      </div>
+      <div class="card-name">Iván David<br>Vergara Mercado</div>
+      <div class="card-role">Integrante #01</div>
+    </a>
+
+    <a href="cv2.html" class="member-card">
+      <div class="card-num">02</div>
+      <div class="avatar-placeholder" style="background:rgba(56,189,248,0.08);border:2px solid rgba(56,189,248,0.3);">
+        <img src="foto2.jpeg" alt="Luis Meza" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';this.parentElement.querySelector('.initials').style.display='flex'"/>
+        <span class="initials" style="display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:rgba(56,189,248,0.7);width:100%;height:100%;">LM</span>
+      </div>
+      <div class="card-name">Luis Fernando<br>Meza Osorio</div>
+      <div class="card-role">Integrante #02</div>
+    </a>
+
+    <a href="cv3.html" class="member-card">
+      <div class="card-num">03</div>
+      <div class="avatar-placeholder" style="background:rgba(251,146,60,0.08);border:2px solid rgba(251,146,60,0.3);">
+        <img src="foto3.jpeg" alt="Yoel Meléndrez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';this.parentElement.querySelector('.initials').style.display='flex'"/>
+        <span class="initials" style="display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:rgba(251,146,60,0.7);width:100%;height:100%;">YM</span>
+      </div>
+      <div class="card-name">Yoel David<br>Meléndrez Barrios</div>
+      <div class="card-role">Integrante #03</div>
+    </a>
+
+    <a href="cv4.html" class="member-card">
+      <div class="card-num">04</div>
+      <div class="avatar-placeholder" style="background:rgba(167,139,250,0.08);border:2px solid rgba(167,139,250,0.3);">
+        <img src="foto4.jpeg" alt="Jaime Sánchez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';this.parentElement.querySelector('.initials').style.display='flex'"/>
+        <span class="initials" style="display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:rgba(167,139,250,0.7);width:100%;height:100%;">JS</span>
+      </div>
+      <div class="card-name">Jaime José<br>Sánchez Castellar</div>
+      <div class="card-role">Integrante #04</div>
+    </a>
+
+    <a href="cv5.html" class="member-card">
+      <div class="card-num">05</div>
+      <div class="avatar-placeholder" style="background:rgba(244,114,182,0.08);border:2px solid rgba(244,114,182,0.3);">
+        <img src="foto5.jpeg" alt="Ramón Puello" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';this.parentElement.querySelector('.initials').style.display='flex'"/>
+        <span class="initials" style="display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:rgba(244,114,182,0.7);width:100%;height:100%;">RP</span>
+      </div>
+      <div class="card-name">Ramón Antonio<br>Puello Yepes</div>
+      <div class="card-role">Integrante #05</div>
+    </a>
+
+  </div>
+</div>
+
+<!--JAD SECTION  -->
+<section class="jad-section" id="jad">
+  <div class="jad-inner">
+    <div class="jad-header">
+      <p style="font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">METODOLOGÍA</p>
+      <h2 class="section-title">Punto <span>JAD</span></h2>
+      <p>Este sitio fue desarrollado mediante sesiones de <strong style="color:var(--white)">Diseño Conjunto de Aplicaciones (JAD)</strong>, donde los cinco integrantes participaron activamente en la definición de requerimientos, arquitectura de información, diseño visual y desarrollo técnico del proyecto.</p>
+    </div>
+    <div class="jad-grid">
+      <div class="jad-item">
+        <div class="ji-icon">💡</div>
+        <strong>Ideación</strong>
+        <span>Lluvia de ideas para estructura, contenidos y navegación del sitio.</span>
+      </div>
+      <div class="jad-item">
+        <div class="ji-icon">🗂️</div>
+        <strong>Arquitectura</strong>
+        <span>Definición de páginas, flujo de usuario y jerarquía de información.</span>
+      </div>
+      <div class="jad-item">
+        <div class="ji-icon">🎨</div>
+        <strong>Diseño visual</strong>
+        <span>Paleta de colores, tipografía, componentes y estilo dark mode.</span>
+      </div>
+      <div class="jad-item">
+        <div class="ji-icon">💻</div>
+        <strong>Desarrollo</strong>
+        <span>Codificación en HTML5, CSS3 y JavaScript vanilla por todo el grupo.</span>
+      </div>
+      <div class="jad-item">
+        <div class="ji-icon">📱</div>
+        <strong>Responsive</strong>
+        <span>Pruebas de adaptabilidad en dispositivos móviles, tablets y escritorio.</span>
+      </div>
+      <div class="jad-item">
+        <div class="ji-icon">✅</div>
+        <strong>Validación</strong>
+        <span>Revisión de ortografía, accesibilidad, contraste y estándares web.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>CIPA 5</strong> &mdash; Ingeniería de Software &nbsp;·&nbsp; 2026</p>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+</body>
+</html>

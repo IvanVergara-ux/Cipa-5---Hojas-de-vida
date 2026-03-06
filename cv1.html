@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ivan David Vergara Mercado — Hoja de Vida</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+  <script src="main.js" defer></script>
+  <style>
+    :root {
+      --member-color:   #c8ff00;
+      --member-color-a: rgba(200,255,0,0.10);
+    }
+  </style>
+</head>
+<body>
+
+<div id="scrollBar"></div>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav>
+  <a href="index.html" class="nav-brand">CIPA&nbsp;5</a>
+  <button class="nav-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Inicio</a>
+    <a href="cv1.html" class="active">Ivan Vergara</a>
+    <a href="cv2.html">Luis Meza</a>
+    <a href="cv3.html">Yoel Meléndrez</a>
+    <a href="cv4.html">Jaime Sánchez</a>
+    <a href="cv5.html">Ramón Puello</a>
+  </div>
+  <div class="nav-spacer"></div>
+  <button class="audio-btn" onclick="toggleAudio()" title="Música de fondo">
+    <span id="audioIcon">🔇</span>
+  </button>
+</nav>
+
+<audio id="bgAudio" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"/>
+</audio>
+
+<div id="cv-printable">
+<!-- ═══ CV HERO ═══ -->
+<div class="cv-hero">
+  <div class="cv-hero-bg"></div>
+  <div class="cv-hero-inner">
+
+    <!-- PHOTO -->
+    <div style="position:relative;">
+      <div class="cv-photo-placeholder" style="font-size:0;">
+        <img src="foto1.jpeg" alt="Iván David Vergara Mercado"
+             style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:3px solid #c8ff00;box-shadow:0 0 40px rgba(200,255,0,0.10);"
+             onerror="this.style.display='none';document.getElementById('initials1').style.display='flex'"/>
+        <span id="initials1"
+              style="display:none;align-items:center;justify-content:center;
+                     width:140px;height:140px;border-radius:50%;
+                     font-family:'Bebas Neue',sans-serif;font-size:3.2rem;
+                     color:#c8ff00;background:var(--surface);
+                     border:3px solid #c8ff00;box-shadow:0 0 40px rgba(200,255,0,0.10);">
+          IV
+        </span>
+      </div>
+    </div>
+
+    <!-- TITLE BLOCK -->
+    <div class="cv-title-block">
+      <div class="cv-number">INTEGRANTE #01 &nbsp;·&nbsp; INGENIERÍA DE SOFTWARE</div>
+      <h1 class="cv-name">IVAN DAVID VERGARA MERCADO</h1>
+      <p class="cv-role"><i class="fas fa-briefcase"></i>&nbsp; Estudiante de Ingenieria de software</p>
+      <div class="cv-contacts">
+        <span class="cv-contact-item"><span></span> San Juan Nepomuceno, Bolívar</span>
+        <span class="cv-contact-item"><span></span> ivergaram@unicartagena.edu.co</span>
+        <span class="cv-contact-item"><span></span> +57 304 647 4670</span>
+        <span class="cv-contact-item"><span></span> https://www.linkedin.com/in/ivan-david-53a6613b5/</span>
+      </div>
+      <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="pdf-btn" id="pdfBtn" onclick="generatePDF()">
+        Descargar PDF
+        </button>
+        <a href="index.html" class="pdf-btn" style="background:transparent;border:1px solid var(--border);color:var(--text);">
+          ← Volver al inicio
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ CV BODY (printable) ═══ -->
+<div class="cv-body">
+
+  <!-- SOBRE MÍ -->
+  <div class="cv-block full">
+    <div class="cv-block-title"><i class="fas fa-user"></i> Sobre mí</div>
+    <p class="about-text">Soy Ivan Vergara , tengo 18 años y soy estudiante de ingenieria de software en la UDC y estudiante de ingenieria de software comercial en jala university (EEUU - JALA SOFT), con conocimiento en bases de datos,logica proposicional, desarrollo en python, Java, JavaScript y C# basico. Interesado en desarrollo Frontend, backend y análisis de requerimientos. Busco oportunidades para aplicar y fortalecer mis habilidades técnicas en entornos reales.</p>
+  </div>
+
+  <!-- EDUCACIÓN -->
+  <div class="cv-block">
+    <div class="cv-block-title"><i class="fas fa-graduation-cap"></i> Educación</div>
+    <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div>
+            <div class="tl-year">2018–2023</div>
+            <div class="tl-title">Bachiller Academico</div>
+            <div class="tl-sub">Institucion educariva Diogenes A. Arrieta</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div>
+            <div class="tl-year">2021-2023</div>
+            <div class="tl-title">Tecnico en Asistencia Administrativa</div>
+            <div class="tl-sub">SENA</div>
+          </div>
+
+          <div class="tl-dot"></div>
+          <div>
+            <div class="tl-year">2024-2026 (Presente)</div>
+            <div class="tl-title">Ingeniería de software (En curso)</div>
+            <div class="tl-sub">Universidad de Cartagena</div>
+          </div>
+
+          <div class="tl-dot"></div>
+          <div>
+            <div class="tl-year">2026 (Presente)</div>
+            <div class="tl-title">Ingeniería de software Comercial (En curso)</div>
+            <div class="tl-sub">Jala University (Jala Soft)</div>
+          </div>
+        </div></div>
+  </div>
+
+  <!-- EXPERIENCIA -->
+  <div class="cv-block">
+    <div class="cv-block-title"><i class="fas fa-briefcase"></i> Experiencia</div>
+    <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div>
+            <div class="tl-year">2026–Presente</div>
+            <div class="tl-title">Desarrollador Jr. Practicante</div>
+            <div class="tl-sub">Proyecto: Simulador de Ecosistema Basado en Autómatas Celulares y matrices bidimensionales (Java)</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div>
+            <div class="tl-year">2025-2016 (Presente)</div>
+            <div class="tl-title">Freelance</div>
+            <div class="tl-sub">Cuando se me da la oportunidad trabajo para mejorar paginas webs de tiendas , desarrollo sistema de control de ventas (Proyexto independiente). Diseñe una aplicación en python para registrar ventas y generar reportes basicos, mejorando el control financiero del negocio.</div>
+          </div>
+
+          <div class="tl-dot"></div>
+          <div>
+            <div class="tl-year">2025-2016 (Presente)</div>
+            <div class="tl-title">Desarrollador de Videojuegos</div>
+            <div class="tl-sub">Diseñe y cree un juego llamado Fruventure usando unity2D , programando en C# y buenas practicas de diseño y programación.</div>
+          </div>
+        </div></div>
+  </div>
+
+  <!-- HABILIDADES -->
+  <div class="cv-block">
+    <div class="cv-block-title"><i class="fas fa-tools"></i> Habilidades técnicas</div>
+    <div class="skills-list"><span class="skill-tag">JavaScript</span><span class="skill-tag">Java</span><span class="skill-tag">Node.js</span><span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">Desarrollador web</span><span class="skill-tag">Lider de proyectos</span><span class="skill-tag">Desarrollador de videojuegos</span></div>
+  </div>
+
+  <!-- IDIOMAS -->
+  <div class="cv-block">
+    <div class="cv-block-title"><i class="fas fa-language"></i> Idiomas</div>
+    <div class="lang-list"><span class="lang-tag">Español (Nativo)</span><span class="lang-tag">Inglés (B2)</span></div>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="cv-block full">
+    <div class="cv-block-title"><i class="fas fa-address-book"></i> Referencias</div>
+    
+        <div class="ref-item">
+          <span class="ref-badge pro">Profesional</span>
+          <div>
+            <div class="ref-name">Ing. Orlando Alarcon</div>
+            <div class="ref-role">Ingeniero de sistemas y profesor de jala University</div>
+            <div class="ref-phone">📞 +57 300 234 6748</div>
+          </div>
+        </div>
+        <div class="ref-item">
+          <span class="ref-badge fam">Familiar</span>
+          <div>
+            <div class="ref-name">Lisbeth Mercado</div>
+            <div class="ref-role">Madre— Secretaria</div>
+            <div class="ref-phone">📞 +57  324 7393663</div>
+          </div>
+        </div>
+  </div>
+
+</div>
+
+</div><!-- /cv-printable -->
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>CIPA 5</strong> &mdash; Ingeniería de Software &nbsp;·&nbsp; 2026</p>
+  <p>Hoja de vida de <strong>Iván David Vergara Mercado</strong> 
+</footer>
+
+<button class="back-top" id="backTop" onclick="wi

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jaime José Sánchez Castellar — Hoja de Vida</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+  <script src="main.js" defer></script>
+  <style>:root{--member-color:#a78bfa;--member-color-a:rgba(167,139,250,0.10);}</style>
+</head>
+<body>
+<div id="scrollBar"></div>
+<nav>
+  <a href="index.html" class="nav-brand">CIPA&nbsp;5</a>
+  <button class="nav-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Inicio</a>
+    <a href="cv1.html">Ivan Vergara</a>
+    <a href="cv2.html">Luis Meza</a>
+    <a href="cv3.html">Yoel Meléndrez</a>
+    <a href="cv4.html" class="active">Jaime Sánchez</a>
+    <a href="cv5.html">Ramón Puello</a>
+  </div>
+  <div class="nav-spacer"></div>
+  <button class="audio-btn" onclick="toggleAudio()" title="Música de fondo"><span id="audioIcon">🔇</span></button>
+</nav>
+<audio id="bgAudio" loop><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"/></audio>
+
+<div id="cv-printable">
+<div class="cv-hero">
+  <div class="cv-hero-bg"></div>
+  <div class="cv-hero-inner">
+    <div style="position:relative;">
+      <div class="cv-photo-placeholder" style="font-size:0;">
+        <img src="foto4.jpeg" alt="Jaime José Sánchez Castellar"
+             style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:3px solid #a78bfa;box-shadow:0 0 40px rgba(167,139,250,0.10);"
+             onerror="this.style.display='none';document.getElementById('initials4').style.display='flex'"/>
+        <span id="initials4" style="display:none;align-items:center;justify-content:center;width:140px;height:140px;border-radius:50%;font-family:'Bebas Neue',sans-serif;font-size:3.2rem;color:#a78bfa;background:var(--surface);border:3px solid #a78bfa;box-shadow:0 0 40px rgba(167,139,250,0.10);">JS</span>
+      </div>
+    </div>
+    <div class="cv-title-block">
+      <div class="cv-number">INTEGRANTE #04 &nbsp;·&nbsp; INGENIERÍA DE SOFTWARE</div>
+      <h1 class="cv-name">JAIME JOSÉ SÁNCHEZ CASTELLAR</h1>
+      <p class="cv-role"><i class="fas fa-cogs"></i>&nbsp; Ing. Industrial · Transición a Desarrollo de Software</p>
+      <div class="cv-contacts">
+        <span class="cv-contact-item"><span></span> Barranquilla, Colombia</span>
+        <span class="cv-contact-item"><span></span> 301 291 4033</span>
+        <span class="cv-contact-item"><span></span> jaime.joss19@gmail.com</span>
+        <span class="cv-contact-item"><span></span> linkedin.com/in/jaime-jose-sanchez-castellar-304654184</span>
+      </div>
+      <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="pdf-btn" id="pdfBtn" onclick="generatePDF()">Descargar PDF</button>
+        <a href="index.html" class="pdf-btn" style="background:transparent;border:1px solid var(--border);color:var(--text);">← Volver al inicio</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cv-body">
+
+  <div class="cv-block full">
+    <div class="cv-block-title"><i class="fas fa-user"></i> Perfil profesional</div>
+    <p class="about-text">Ingeniero industrial con enfoque en la optimización de procesos y mejora continua, en transición hacia el campo del desarrollo de software a través del pregrado en Ingeniería de Software. Poseo una sólida base en análisis de datos, gestión de proyectos y resolución de problemas, y actualmente aplico estos conocimientos para desarrollar soluciones tecnológicas eficientes. Busco un puesto que combine mi visión estratégica de procesos con habilidades técnicas en desarrollo de software.</p>
+  </div>
+
+  <div class="cv-block">
+    <div class="cv-block-title"><i class="fas fa-graduation-cap"></i> Educación</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div>
+        <div class="tl-year">Cursando</div>
+        <div class="tl-title">Ingeniería de Software — En curso</div>
+        <div class="tl-sub">Universidad de Cartagena (UDC)</div>
+      </div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div>
+        <div class="tl-year">En espera del título · 2025</div>
+        <div class="tl-title">Ingeniería Industrial</div>
+        <div class="tl-sub">Universidad Abierta y a Distancia (UNAD) — Bogotá, Colombia</div>
+      </div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div>
+        <div class="tl-year">Ene 2018 – Feb 2019</div>
+        <div class="tl-title">Curso de Inglés — Lenguas Extranjeras</div>
+        <div class="tl-sub">Universidad del Atlántico</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="cv-block">
+    <div class="cv-block-title"><i class="fas fa-briefcase"></i> Experiencia</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div>
+        <div class="tl-year">Oct 2019 – Dic 2019</div>
+        <div class="tl-title">Verificador E-14</div>
+        <div class="tl-sub">Registraduría General de la Nación — Barranquilla, Colombia</div>
+      </div></div>
+    </div>
+    <p style="font-size:.8rem;color:var(--muted);margin-top:12px;line-height:1.7;">Vigiló y verificó la transparencia en el proceso de conteo de votos. Mediante software especializado, validó cada cartón E-14 del municipio del Atlántico y transmitió los resultados a la central de la Registraduría en Bogotá.</p>
+  </div>
+
+  <div class="cv-block">
+    <div class="cv-block-title"><i class="fas fa-tools"></i> Competencias</div>
+    <div class="skills-list">
+      <span class="skill-tag">Excel intermedio</span>
+      <span class="skill-tag">Tableau</span>
+      <span class="skill-tag">Gestión de Proyectos (PMI)</span>
+      <span class="skill-tag">Lean Manufacturing</span>
+      <span class="skill-tag">Six Sigma</span>
+      <span class="skill-tag">Optimización de Procesos</span>
+      <span class="skill-tag">Cadena de Suministro</span>
+    </div>
+  </div>
+
+  <div class="cv-block">
+    <div class="cv-block-title"><i class="fas fa-language"></i> Idiomas</div>
+    <div class="lang-list">
+      <span class="lang-tag">Español (Nativo)</span>
+      <span class="lang-tag">Inglés (Básico-Intermedio)</span>
+    </div>
+  </div>
+
+  <div class="cv-block full">
+    <div class="cv-block-title"><i class="fas fa-address-book"></i> Referencias</div>
+    <div class="ref-item">
+      <span class="ref-badge pro">Profesional</span>
+      <div>
+        <div class="ref-name">Registraduría General de la Nación</div>
+        <div class="ref-role">Supervisor electoral — Barranquilla, Colombia</div>
+        <div class="ref-phone">📞 Disponible a solicitud</div>
+      </div>
+    </div>
+    <div class="ref-item">
+      <span class="ref-badge fam">Familiar</span>
+      <div>
+        <div class="ref-name">Referencia familiar de Jaime Sánchez</div>
+        <div class="ref-role">Referencia personal y de carácter</div>
+        <div class="ref-phone">📞 Disponible a solicitud</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div><!-- /cv-printable -->
+
+<footer>
+  <p><strong>CIPA 5</strong> &mdash; Ingeniería de Software &nbsp;·&nbsp; 2026</p>
+  <p>Hoja de vida de <strong>Jaime José Sánchez Castellar</strong> 
+</footer>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+</body>
+</html>

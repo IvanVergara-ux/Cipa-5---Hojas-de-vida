@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ramón Antonio Puello Yepes — Hoja de Vida</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+  <script src="main.js" defer></script>
+  <style>:root{--member-color:#f472b6;--member-color-a:rgba(244,114,182,0.10);}</style>
+</head>
+<body>
+<div id="scrollBar"></div>
+<nav>
+  <a href="index.html" class="nav-brand">GRUPO&nbsp;5</a>
+  <button class="nav-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Inicio</a>
+    <a href="cv1.html">Ivan Vergara</a>
+    <a href="cv2.html">Luis Meza</a>
+    <a href="cv3.html">Yoel Meléndrez</a>
+    <a href="cv4.html">Jaime Sánchez</a>
+    <a href="cv5.html" class="active">Ramón Puello</a>
+  </div>
+  <div class="nav-spacer"></div>
+  <button class="audio-btn" onclick="toggleAudio()" title="Música de fondo"><span id="audioIcon">🔇</span></button>
+</nav>
+<audio id="bgAudio" loop><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"/></audio>
+
+<div id="cv-printable">
+<div class="cv-hero">
+  <div class="cv-hero-bg"></div>
+  <div class="cv-hero-inner">
+    <div style="position:relative;">
+      <div class="cv-photo-placeholder" style="font-size:0;">
+        <img src="foto5.jpeg" alt="Ramón Antonio Puello Yepes"
+             style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:3px solid #f472b6;box-shadow:0 0 40px rgba(244,114,182,0.10);"
+             onerror="this.style.display='none';document.getElementById('initials5').style.display='flex'"/>
+        <span id="initials5" style="display:none;align-items:center;justify-content:center;width:140px;height:140px;border-radius:50%;font-family:'Bebas Neue',sans-serif;font-size:3.2rem;color:#f472b6;background:var(--surface);border:3px solid #f472b6;box-shadow:0 0 40px rgba(244,114,182,0.10);">RP</span>
+      </div>
+    </div>
+    <div class="cv-title-block">
+      <div class="cv-number">INTEGRANTE #05 &nbsp;·&nbsp; INGENIERÍA DE SOFTWARE</div>
+      <h1 class="cv-name">RAMÓN ANTONIO PUELLO YEPES</h1>
+      <p class="cv-role"><i class="fas fa-laptop-code"></i>&nbsp; Asistente Digital · Desarrollador en Formación</p>
+      <div class="cv-contacts">
+        <span class="cv-contact-item"><span></span> San Juan Nepomuceno, Colombia</span>
+        <span class="cv-contact-item"><span></span> Universidad de Cartagena — Sede San Juan</span>
+      </div>
+      <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="pdf-btn" id="pdfBtn" onclick="generatePDF()">Descargar PDF</button>
+        <a href="index.html" class="pdf-btn" style="background:transparent;border:1px solid var(--border);color:var(--text);">← Volver al inicio</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cv-body">
+
+  <div class="cv-block full">
+    <div class="cv-block-title"><i class="fas fa-user"></i> Sobre mí</div>
+    <p class="about-text">Me destaco por mi facilidad para comunicar ideas complejas de manera sencilla, mi habilidad para trabajar en equipo y mi compromiso constante con el aprendizaje. Siempre busco nuevas formas de innovar en lo que hago. Soy estudiante de Ingeniería en Software con formación técnica previa en el SENA, donde desarrollé las bases de mi pensamiento lógico y computacional. Combino creatividad digital con análisis riguroso para proponer soluciones que marcan la diferencia.</p>
+  </div>
+
+  <div class="cv-block">
+    <div class="cv-block-title"><i class="fas fa-graduation-cap"></i> Educación</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div>
+        <div class="tl-year">2023 – Presente</div>
+        <div class="tl-title">Ingeniería en Software — En curso</div>
+        <div class="tl-sub">Universidad de Cartagena, Sede San Juan Nepomuceno</div>
+      </div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div>
+        <div class="tl-year">2021 – 2022</div>
+        <div class="tl-title">Ingeniería en Sistemas (Técnico)</div>
+        <div class="tl-sub">SENA — Servicio Nacional de Aprendizaje</div>
+      </div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div>
+        <div class="tl-year">2022</div>
+        <div class="tl-title">Bachiller Académico</div>
+        <div class="tl-sub">Institución Educativa Pío XII</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="cv-block">
+    <div class="cv-block-title"><i class="fas fa-briefcase"></i> Experiencia</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div>
+        <div class="tl-year">2023 – Presente</div>
+        <div class="tl-title">Asistente Digital y Creativo</div>
+        <div class="tl-sub">Proyectos personales y colaborativos — Independiente</div>
+      </div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div>
+        <div class="tl-year">2023</div>
+        <div class="tl-title">Apoyo en Programación y Análisis</div>
+        <div class="tl-sub">Actividades académicas y de refuerzo — SENA / UDC</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="cv-block">
+    <div class="cv-block-title"><i class="fas fa-tools"></i> Habilidades</div>
+    <div class="skills-list">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">JavaScript</span>
+      <span class="skill-tag">Lógica de Programación</span>
+      <span class="skill-tag">Matemáticas</span>
+      <span class="skill-tag">Creatividad Digital</span>
+      <span class="skill-tag">Resolución de Problemas</span>
+      <span class="skill-tag">Adaptabilidad</span>
+      <span class="skill-tag">Trabajo en Equipo</span>
+    </div>
+  </div>
+
+  <div class="cv-block">
+    <div class="cv-block-title"><i class="fas fa-language"></i> Idiomas</div>
+    <div class="lang-list">
+      <span class="lang-tag">Español (Nativo)</span>
+      <span class="lang-tag">Inglés (Básico)</span>
+    </div>
+  </div>
+
+  <div class="cv-block full">
+    <div class="cv-block-title"><i class="fas fa-address-book"></i> Referencias</div>
+    <div class="ref-item">
+      <span class="ref-badge pro">Profesional</span>
+      <div>
+        <div class="ref-name">Alex Guete</div>
+        <div class="ref-role">Chef y Fotógrafo Profesional</div>
+        <div class="ref-phone">📞 302 408 4929</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div><!-- /cv-printable -->
+
+<footer>
+  <p><strong>CIPA 5</strong> &mdash; Ingeniería de Software &nbsp;·&nbsp; 2026</p>
+  <p>Hoja de vida de <strong>Ramón Antonio Puello Yepes</strong> 
+</footer>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+</body>
+</html>
